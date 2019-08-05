@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Meta" representedClassName="Meta" syncable="YES" codeGenerationType="class">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="prazo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Prazo" inverseName="meta" inverseEntity="Prazo" syncable="YES"/>
+        <relationship name="valor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Valor" inverseName="metas" inverseEntity="Valor" syncable="YES"/>
+    </entity>
+    <entity name="Prazo" representedClassName="Prazo" syncable="YES" codeGenerationType="class">
+        <attribute name="prazo" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="meta" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meta" inverseName="prazo" inverseEntity="Meta" syncable="YES"/>
+    </entity>
+    <entity name="Valor" representedClassName="Valor" syncable="YES" codeGenerationType="class">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="metas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meta" inverseName="valor" inverseEntity="Meta" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Valor" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Meta" positionX="190.796875" positionY="42.3515625" width="128" height="88"/>
+        <element name="Prazo" positionX="418.23046875" positionY="19.92578125" width="128" height="75"/>
+    </elements>
+</model>
